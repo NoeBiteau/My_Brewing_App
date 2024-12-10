@@ -12,14 +12,14 @@ def show_recipe_editor():
     
     # Fermentescibles
     st.subheader("Fermentescibles")
-    fermentables = st.data_editor(
+    fermentables = st.experimental_data_editor(
         [{"name": "Pale Malt", "amount": 5, "yield": 0.75}, {"name": "Caramel Malt", "amount": 1, "yield": 0.7}],
         key="fermentables",
     )
 
     # Houblons
     st.subheader("Houblons")
-    hops = st.data_editor(
+    hops = st.experimental_data_editor(
         [{"name": "Cascade", "amount": 10, "alpha": 0.05, "time": 60}, {"name": "Saaz", "amount": 5, "alpha": 0.03, "time": 15}],
         key="hops",
     )
