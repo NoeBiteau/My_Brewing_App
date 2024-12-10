@@ -34,7 +34,7 @@ def create_tables():
     )
     """)
 
-    # Table for diverse ingredients (e.g., adjuncts)
+    # Table for diverse ingredients (adjuncts)
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS divers (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -75,9 +75,9 @@ def insert_test_data():
 
     # Test data for fermentables (malt ingredients)
     fermentables = [
-        ("Pale Malt", "Base", "MaltCo", "France", "Pale Ale", 8.0, 1.038, 0.75, 300, 4.5, 5.0, 12.0),
-        ("Caramel Malt", "Specialty", "SpecialMalt", "Belgium", "Caramel", 40.0, 1.030, 0.7, 500, 4.0, 5.5, 10.0),
-        ("Wheat Malt", "Base", "WheatBrew", "Germany", "Wheat", 6.0, 1.040, 0.8, 300, 5.0, 6.0, 11.0)
+        ("Pale Malt", "Base", "MaltCo", "France", "Pale Ale", 8.0, 1.038, 0.75, 300, 5.0, 12.0),
+        ("Caramel Malt", "Specialty", "SpecialMalt", "Belgium", "Caramel", 40.0, 1.030, 0.7, 500, 5.5, 10.0),
+        ("Wheat Malt", "Base", "WheatBrew", "Germany", "Wheat", 6.0, 1.040, 0.8, 300, 6.0, 11.0)
     ]
     cursor.executemany("""
         INSERT INTO fermentables (name, category, supplier, source, type, color, potential, yield_value, diastatic_power, moisture, protein)
