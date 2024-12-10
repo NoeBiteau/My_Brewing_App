@@ -15,7 +15,7 @@ if selected_tab == "Recettes":
         st.session_state.show_recipe_editor = True
 
     if st.session_state.get("show_recipe_editor", False):
-        st.experimental_set_query_params(page="editor")  # Open editor page
+        st.set_query_params(page="editor")  # Open editor page
 
     st.markdown("### Liste des recettes")
     # Simulated recipe list
@@ -23,7 +23,7 @@ if selected_tab == "Recettes":
     for recipe in recipes:
         st.markdown(f"**{recipe['name']}** par {recipe['author']}")
 
-elif st.experimental_get_query_params().get("page") == ["editor"]:
+elif st.get_query_params().get("page") == ["editor"]:
     # Call the recipe editor
     from recipe_editor import show_recipe_editor
     show_recipe_editor()
