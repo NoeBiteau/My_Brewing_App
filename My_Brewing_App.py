@@ -23,7 +23,7 @@ if selected_tab == "Recettes":
     for recipe in recipes:
         st.markdown(f"**{recipe['name']}** par {recipe['author']}")
 
-elif st.query_params().get("page") == ["editor"]:
+elif st.experimental_get_query_params().get("page") == ["editor"]:
     # Call the recipe editor
     from recipe_editor import show_recipe_editor
     show_recipe_editor()
